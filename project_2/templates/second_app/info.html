@@ -5,6 +5,27 @@
   <div class="jumbotron">
     <h1>This is the info</h1>
 
+    <div class="djangtwo">
+      {% if access_records %}
+          <table>
+            <thead>
+              <th>Site Name</th>
+              <th>Date Accessed</th>
+            </thead>
+
+            {% for acc in access_records %}
+              <tr>
+                <td>{{ acc.name }}</td>
+                <td>{{ acc.date }}</td>
+              </tr>
+            {% endfor %}
+        </table>
+
+      {% else %}
+        <p>No Access Records. Table Not Created.</p>
+      {% endif %}
+    </div>
+
   </div>
 </div>
 
